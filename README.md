@@ -356,6 +356,10 @@ d.time
 
 ---
 
+## AUTHOR
+
+Siddharth Verma
+
 ## 🤝 Contributing
 
 Contributions are welcome! Here's how to get started:
