@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="EcoTrack Activities Explorer — learn how 20 everyday activities affect your carbon footprint."/>
+  <title>EcoTrack — Activities Explorer</title>
+  <link rel="stylesheet" href="css/activities.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="logo" aria-label="EcoTrack home">🌍 <span>EcoTrack</span></div>
+  <button class="nav-toggle" id="navToggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navMenu">☰</button>
+  <ul class="nav-links" id="navMenu" role="list">
+    <li role="listitem"><a href="index.html">Home</a></li>
+    <li role="listitem"><a href="calculator.html">Calculator</a></li>
+    <li role="listitem"><a href="dashboard.html">Dashboard</a></li>
+    <li role="listitem"><a class="active" href="activities.html" aria-current="page">Activities</a></li>
+    <li role="listitem"><a href="recommendation.html">AI Recommendations</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <div class="container">
+    <h1>Carbon Activities Explorer</h1>
+    <p class="subtitle">
+      Click any tile to discover its carbon impact, emission sources, and environmental footprint.
+    </p>
+
+    <div class="activity-grid" role="list" aria-label="Carbon activity tiles — click to learn more">
+      <div class="activity-tile" data-category="petrol"               role="listitem"><div class="activity-front">🚗 Petrol Vehicle</div></div>
+      <div class="activity-tile" data-category="diesel"               role="listitem"><div class="activity-front">🚛 Diesel Vehicle</div></div>
+      <div class="activity-tile" data-category="electric"             role="listitem"><div class="activity-front">⚡ Electric Vehicle</div></div>
+      <div class="activity-tile" data-category="electricityUsage"     role="listitem"><div class="activity-front">⚡ Electricity Usage</div></div>
+      <div class="activity-tile" data-category="naturalGasUsage"      role="listitem"><div class="activity-front">🔥 Natural Gas</div></div>
+      <div class="activity-tile" data-category="renewableEnergy"      role="listitem"><div class="activity-front">🌱 Renewable Energy</div></div>
+      <div class="activity-tile" data-category="vegan"                role="listitem"><div class="activity-front">🥗 Vegan Diet</div></div>
+      <div class="activity-tile" data-category="vegetarian"           role="listitem"><div class="activity-front">🥛 Vegetarian Diet</div></div>
+      <div class="activity-tile" data-category="mixed"                role="listitem"><div class="activity-front">🍽 Mixed Diet</div></div>
+      <div class="activity-tile" data-category="highMeat"             role="listitem"><div class="activity-front">🥩 High Meat Diet</div></div>
+      <div class="activity-tile" data-category="foodWaste"            role="listitem"><div class="activity-front">🍲 Food Waste</div></div>
+      <div class="activity-tile" data-category="wasteGenerated"       role="listitem"><div class="activity-front">🗑 Waste Generation</div></div>
+      <div class="activity-tile" data-category="recyclingRate"        role="listitem"><div class="activity-front">♻ Recycling Rate</div></div>
+      <div class="activity-tile" data-category="clothingPurchases"    role="listitem"><div class="activity-front">👕 Clothing</div></div>
+      <div class="activity-tile" data-category="electronicsPurchases" role="listitem"><div class="activity-front">💻 Electronics</div></div>
+      <div class="activity-tile" data-category="waterUsage"           role="listitem"><div class="activity-front">💧 Water Usage</div></div>
+      <div class="activity-tile" data-category="laptopHours"          role="listitem"><div class="activity-front">💻 Laptop Usage</div></div>
+      <div class="activity-tile" data-category="deviceCount"          role="listitem"><div class="activity-front">📱 Connected Devices</div></div>
+      <div class="activity-tile" data-category="shortFlights"         role="listitem"><div class="activity-front">✈ Short Flights</div></div>
+      <div class="activity-tile" data-category="longFlights"          role="listitem"><div class="activity-front">🌍 Long Flights</div></div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <p>🌍 EcoTrack · AI-Powered Carbon Intelligence Platform</p>
+</footer>
+
+<script src="js/utils.js"></script>
+<script src="js/activities.js"></script>
+</body>
+</html>

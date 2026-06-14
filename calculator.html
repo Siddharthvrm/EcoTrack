@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="EcoTrack Carbon Footprint Calculator — track transport, energy, food, waste, and more across 8 categories."/>
+  <title>EcoTrack — Calculator</title>
+  <link rel="stylesheet" href="css/cal.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="logo" aria-label="EcoTrack home">🌍 <span>EcoTrack</span></div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+  <ul class="nav-links" id="navMenu" role="list">
+    <li role="listitem"><a href="index.html">Home</a></li>
+    <li role="listitem"><a class="active" href="calculator.html" aria-current="page">Calculator</a></li>
+    <li role="listitem"><a href="dashboard.html">Dashboard</a></li>
+    <li role="listitem"><a href="activities.html">Activities</a></li>
+    <li role="listitem"><a href="recommendation.html">AI Recommendations</a></li>
+  </ul>
+</nav>
+
+<main id="main-content" class="container">
+
+  <section class="calc-hero" aria-labelledby="calc-heading">
+    <div class="calc-badge" role="note">🌍 AI-Powered Sustainability Platform</div>
+    <h1 id="calc-heading">Carbon Footprint Calculator</h1>
+    <p class="subtitle">
+      Build your personal carbon profile across 8 sustainability categories.
+      Complete each section and let EcoTrack analyse your environmental impact.
+    </p>
+
+    <div class="progress-wrapper"
+         role="progressbar"
+         aria-labelledby="progressText"
+         aria-valuenow="0"
+         aria-valuemin="0"
+         aria-valuemax="100">
+      <div class="progress-header">
+        <span>Calculator Progress</span>
+        <span id="progressText" aria-live="polite">0 / 8 Categories Completed</span>
+      </div>
+      <div class="progress-bar" aria-hidden="true">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="calculator-section" aria-labelledby="categories-heading">
+    <div class="section-header">
+      <h2 id="categories-heading">📋 Sustainability Categories</h2>
+      <p>Click a category tile to open its input panel. Press Escape to close.</p>
+    </div>
+
+    <div class="tiles-grid" role="list" aria-label="Carbon calculator categories">
+
+      <div class="tile" data-category="transport"
+           role="listitem" tabindex="0"
+           aria-label="Transportation category — click to open">
+        <div class="tile-front">
+          <div class="tile-title">🚗 Transportation</div>
+        </div>
+        <div class="tile-back" aria-hidden="false">
+          <div class="transport-form">
+            <h2 id="transport-heading">🚗 Transportation</h2>
+            <p class="form-sub">Monthly vehicle usage</p>
+
+            <fieldset>
+              <legend>Vehicle Type</legend>
+              <div class="fuel-selector" role="group" aria-label="Select fuel type">
+                <button type="button" class="fuel-pill" data-fuel="petrol"
+                        aria-pressed="false">⛽ Petrol</button>
+                <button type="button" class="fuel-pill" data-fuel="diesel"
+                        aria-pressed="false">🚛 Diesel</button>
+                <button type="button" class="fuel-pill" data-fuel="electric"
+                        aria-pressed="false">⚡ Electric</button>
+              </div>
+            </fieldset>
+
+            <label for="transportDistance">Distance (km / month)</label>
+            <input type="number" id="transportDistance" name="transportDistance"
+                   min="0" step="1" placeholder="e.g. 1200"
+                   aria-describedby="dist-hint"/>
+            <small id="dist-hint">Total kilometres driven per month</small>
+
+            <label for="transportEfficiency">Efficiency (km/L or km/kWh)</label>
+            <input type="number" id="transportEfficiency" name="transportEfficiency"
+                   min="0.1" step="0.1" placeholder="e.g. 15"
+                   aria-describedby="eff-hint"/>
+            <small id="eff-hint">Fuel efficiency of your vehicle</small>
+
+            <div class="actions">
+              <button type="button" class="ok-btn transport-save"
+                      aria-label="Save transportation data">✓ Save</button>
+              <button type="button" class="clear-btn transport-clear"
+                      aria-label="Clear transportation data">✕ Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tile" data-category="energy"
+           role="listitem" tabindex="0"
+           aria-label="Home energy category — click to open">
+        <div class="tile-front">
+          <div class="tile-title">⚡ Home Energy</div>
+        </div>
+        <div class="tile-back">
+          <div class="tile-form" aria-labelledby="energy-heading">
+            <h2 id="energy-heading">⚡ Home Energy</h2>
+            <p class="form-sub">Monthly household energy usage</p>
+
+            <label for="electricityUsage">Electricity Usage (kWh / month)</label>
+            <input type="number" id="electricityUsage" name="electricityUsage"
+                   min="0" placeholder="e.g. 450"/>
+
+            <label for="naturalGasUsage">Natural Gas (m³ / month)</label>
+            <input type="number" id="naturalGasUsage" name="naturalGasUsage"
+                   min="0" placeholder="e.g. 25"/>
+
+            <label for="renewableEnergy">Renewable Energy Share (%)</label>
+            <input type="number" id="renewableEnergy" name="renewableEnergy"
+                   min="0" max="100" placeholder="0 – 100"/>
+
+            <div class="actions">
+              <button type="button" class="ok-btn" aria-label="Save home energy data">✓ Save</button>
+              <button type="button" class="clear-btn" aria-label="Clear home energy data">✕ Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tile" data-category="food"
+           role="listitem" tabindex="0"
+           aria-label="Food and diet category — click to open">
+        <div class="tile-front">
+          <div class="tile-title">🍽 Food & Diet</div>
+        </div>
+        <div class="tile-back">
+          <div class="tile-form" aria-labelledby="food-heading">
+            <h2 id="food-heading">🍽 Food & Diet</h2>
+            <p class="form-sub">Your dietary carbon profile</p>
+
+            <label for="dietType">Diet Type</label>
+            <select id="dietType" name="dietType" aria-label="Select your diet type">
+              <option value="">— Select Diet —</option>
+              <option value="Vegan">🥗 Vegan</option>
+              <option value="Vegetarian">🥛 Vegetarian</option>
+              <option value="Mixed">🍽 Mixed</option>
+              <option value="High Meat">🥩 High Meat</option>
+            </select>
+
+            <label for="foodWaste">Food Waste (kg / month)</label>
+            <input type="number" id="foodWaste" name="foodWaste"
+                   min="0" placeholder="e.g. 5"/>
+
+            <div class="actions">
+              <button type="button" class="ok-btn" aria-label="Save food and diet data">✓ Save</button>
+              <button type="button" class="clear-btn" aria-label="Clear food and diet data">✕ Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tile" data-category="waste"
+           role="listitem" tabindex="0"
+           aria-label="Waste management category — click to open">
+        <div class="tile-front">
+          <div class="tile-title">♻ Waste Management</div>
+        </div>
+        <div class="tile-back">
+          <div class="tile-form" aria-labelledby="waste-heading">
+            <h2 id="waste-heading">♻ Waste Management</h2>
+            <p class="form-sub">Monthly waste and recycling</p>
+
+            <label for="wasteGenerated">Waste Generated (kg / month)</label>
+            <input type="number" id="wasteGenerated" name="wasteGenerated"
+                   min="0" placeholder="e.g. 20"/>
+
+            <label for="recyclingRate">Recycling Rate (0 – 100 %)</label>
+            <input type="number" id="recyclingRate" name="recyclingRate"
+                   min="0" max="100" placeholder="e.g. 50"
+                   aria-describedby="recycling-hint"/>
+            <small id="recycling-hint">Percentage of your waste that is recycled</small>
+
+            <div class="actions">
+              <button type="button" class="ok-btn" aria-label="Save waste management data">✓ Save</button>
+              <button type="button" class="clear-btn" aria-label="Clear waste management data">✕ Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tile" data-category="goods"
+           role="listitem" tabindex="0"
+           aria-label="Consumer goods category — click to open">
+        <div class="tile-front">
+          <div class="tile-title">🛍 Consumer Goods</div>
+        </div>
+        <div class="tile-back">
+          <div class="tile-form" aria-labelledby="goods-heading">
+            <h2 id="goods-heading">🛍 Consumer Goods</h2>
+            <p class="form-sub">Clothing and electronics purchases</p>
+
+            <label for="clothingPurchases">Clothing Items Bought (per month)</label>
+            <input type="number" id="clothingPurchases" name="clothingPurchases"
+                   min="0" placeholder="e.g. 3"/>
+
+            <label for="electronicsPurchases">Electronics Purchased (per year)</label>
+            <input type="number" id="electronicsPurchases" name="electronicsPurchases"
+                   min="0" placeholder="e.g. 2"/>
+
+            <div class="actions">
+              <button type="button" class="ok-btn" aria-label="Save consumer goods data">✓ Save</button>
+              <button type="button" class="clear-btn" aria-label="Clear consumer goods data">✕ Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tile" data-category="water"
+           role="listitem" tabindex="0"
+           aria-label="Water usage category — click to open">
+        <div class="tile-front">
+          <div class="tile-title">💧 Water Usage</div>
+        </div>
+        <div class="tile-back">
+          <div class="tile-form" aria-labelledby="water-heading">
+            <h2 id="water-heading">💧 Water Usage</h2>
+            <p class="form-sub">Monthly household water consumption</p>
+
+            <label for="waterUsage">Water Consumption (litres / month)</label>
+            <input type="number" id="waterUsage" name="waterUsage"
+                   min="0" placeholder="e.g. 6000"/>
+
+            <div class="actions">
+              <button type="button" class="ok-btn" aria-label="Save water usage data">✓ Save</button>
+              <button type="button" class="clear-btn" aria-label="Clear water usage data">✕ Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tile" data-category="technology"
+           role="listitem" tabindex="0"
+           aria-label="Digital lifestyle category — click to open">
+        <div class="tile-front">
+          <div class="tile-title">🖥 Digital Lifestyle</div>
+        </div>
+        <div class="tile-back">
+          <div class="tile-form" aria-labelledby="tech-heading">
+            <h2 id="tech-heading">🖥 Digital Lifestyle</h2>
+            <p class="form-sub">Screen time and connected devices</p>
+
+            <label for="laptopHours">Laptop Usage (hours / day)</label>
+            <input type="number" id="laptopHours" name="laptopHours"
+                   min="0" max="24" step="0.5" placeholder="e.g. 8"/>
+
+            <label for="deviceCount">Connected Devices (total count)</label>
+            <input type="number" id="deviceCount" name="deviceCount"
+                   min="0" placeholder="e.g. 5"/>
+
+            <div class="actions">
+              <button type="button" class="ok-btn" aria-label="Save digital lifestyle data">✓ Save</button>
+              <button type="button" class="clear-btn" aria-label="Clear digital lifestyle data">✕ Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tile" data-category="aviation"
+           role="listitem" tabindex="0"
+           aria-label="Air travel category — click to open">
+        <div class="tile-front">
+          <div class="tile-title">✈ Air Travel</div>
+        </div>
+        <div class="tile-back">
+          <div class="tile-form" aria-labelledby="aviation-heading">
+            <h2 id="aviation-heading">✈ Air Travel</h2>
+            <p class="form-sub">Annual flights taken</p>
+
+            <label for="shortFlights">Short-Haul Flights per year (&lt; 6 hrs)</label>
+            <input type="number" id="shortFlights" name="shortFlights"
+                   min="0" placeholder="e.g. 4"/>
+
+            <label for="longFlights">Long-Haul Flights per year (&gt; 6 hrs)</label>
+            <input type="number" id="longFlights" name="longFlights"
+                   min="0" placeholder="e.g. 2"/>
+
+            <div class="actions">
+              <button type="button" class="ok-btn" aria-label="Save air travel data">✓ Save</button>
+              <button type="button" class="clear-btn" aria-label="Clear air travel data">✕ Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="action-section" aria-label="Calculator actions">
+    <div class="action-panel">
+      <button id="calculateBtn" class="action-btn primary-btn"
+              aria-label="Calculate your total carbon footprint">
+        🧮 Calculate Footprint
+      </button>
+      <button id="dashboardBtn" class="action-btn secondary-btn hidden"
+              aria-label="Open dashboard to see your results">
+        📊 Open Dashboard
+      </button>
+      <button id="resetBtn" class="action-btn danger-btn"
+              aria-label="Reset all calculator data">
+        🗑 Reset All
+      </button>
+    </div>
+  </section>
+
+  <section class="results-section" aria-live="polite" aria-label="Calculation results">
+    <div id="results" class="results-box hidden"></div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <p>🌍 EcoTrack · AI-Powered Carbon Intelligence Platform</p>
+</footer>
+
+<script src="js/utils.js"></script>
+<script src="js/carbon-data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/calculator.js"></script>
+<script>
+  document.getElementById("navToggle")?.addEventListener("click", function () {
+    const menu = document.getElementById("navMenu");
+    if (!menu) return;
+    const open = menu.classList.toggle("open");
+    this.setAttribute("aria-expanded", String(open));
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="EcoTrack — AI-powered carbon footprint tracker. Measure, understand, and reduce your environmental impact."/>
+  <title>EcoTrack — Carbon Intelligence Platform</title>
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="logo" aria-label="EcoTrack home">🌍 <span>EcoTrack</span></div>
+  <button class="nav-toggle" id="navToggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navMenu">☰</button>
+  <ul class="nav-links" id="navMenu" role="list">
+    <li role="listitem"><a class="active" href="index.html" aria-current="page">Home</a></li>
+    <li role="listitem"><a href="calculator.html">Calculator</a></li>
+    <li role="listitem"><a href="dashboard.html">Dashboard</a></li>
+    <li role="listitem"><a href="activities.html">Activities</a></li>
+    <li role="listitem"><a href="recommendation.html">AI Recommendations</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-badge" role="note">🤖 AI-Powered Sustainability Platform</div>
+    <h1 id="hero-heading">Measure. <span>Understand.</span> Reduce.</h1>
+    <p>Build your personal carbon profile, explore activities affecting your footprint,
+       and receive intelligent insights to create a greener future.</p>
+    <div class="hero-buttons">
+      <a href="calculator.html" class="btn btn-primary"
+         aria-label="Start the carbon footprint calculator">🧮 Start Calculator</a>
+      <a href="activities.html" class="btn btn-secondary"
+         aria-label="Explore carbon activities and their impact">📚 Explore Activities</a>
+    </div>
+  </section>
+
+  <section class="features" aria-labelledby="features-heading">
+    <div class="section-title">
+      <h2 id="features-heading">📊 EcoTrack Features</h2>
+      <p>Everything you need to understand and reduce your carbon footprint.</p>
+    </div>
+    <div class="feature-grid" role="list">
+
+      <a href="calculator.html" class="feature-card" role="listitem"
+         aria-label="Smart Calculator — interactive carbon footprint calculator">
+        <div class="feature-icon" aria-hidden="true">🧮</div>
+        <h3>Smart Calculator</h3>
+        <p>Interactive carbon footprint calculation across 8 sustainability categories with real-time scoring.</p>
+      </a>
+
+      <a href="dashboard.html" class="feature-card" role="listitem"
+         aria-label="Live Dashboard — visualise your emissions with analytics">
+        <div class="feature-icon" aria-hidden="true">📈</div>
+        <h3>Live Dashboard</h3>
+        <p>Visualise your emissions with modern analytics, bar charts, and doughnut breakdowns.</p>
+      </a>
+
+      <a href="activities.html" class="feature-card" role="listitem"
+         aria-label="Activities Explorer — learn how 20 everyday activities affect your footprint">
+        <div class="feature-icon" aria-hidden="true">📚</div>
+        <h3>Activities Explorer</h3>
+        <p>Learn how 20 everyday activities contribute to your carbon footprint with detailed data.</p>
+      </a>
+
+      <a href="recommendation.html" class="feature-card" role="listitem"
+         aria-label="AI Advisor — personalised sustainability recommendations">
+        <div class="feature-icon" aria-hidden="true">🤖</div>
+        <h3>AI Advisor</h3>
+        <p>Personalised sustainability recommendations powered by Claude AI based on your profile.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="stats" aria-labelledby="stats-heading">
+    <h2 id="stats-heading" class="sr-only">Platform Statistics</h2>
+    <div class="stat-card">
+      <h3>8</h3><p>Carbon Categories</p>
+    </div>
+    <div class="stat-card">
+      <h3>20</h3><p>Activities Tracked</p>
+    </div>
+    <div class="stat-card">
+      <h3>AI</h3><p>Smart Insights</p>
+    </div>
+    <div class="stat-card">
+      <h3>100%</h3><p>Free to Use</p>
+    </div>
+  </section>
+
+  <section class="cta-banner" aria-labelledby="cta-heading">
+    <h2 id="cta-heading">🌱 Ready to discover your carbon footprint?</h2>
+    <p>Start your sustainability journey today with EcoTrack's intelligent carbon calculator.</p>
+    <a href="calculator.html" class="btn btn-primary"
+       aria-label="Launch the EcoTrack carbon calculator">🚀 Launch Calculator</a>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <p>🌍 EcoTrack · AI-Powered Carbon Intelligence Platform</p>
+  <span>Built for the Sustainable Future Hackathon</span>
+</footer>
+
+<script>
+  document.getElementById("navToggle")?.addEventListener("click", function () {
+    const menu = document.getElementById("navMenu");
+    if (!menu) return;
+    const open = menu.classList.toggle("open");
+    this.setAttribute("aria-expanded", String(open));
+  });
+</script>
+
+</body>
+</html>
