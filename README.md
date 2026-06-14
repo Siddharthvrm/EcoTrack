@@ -117,33 +117,43 @@ explorer, and AI-powered personalised recommendations via the Claude API.
 ---
 
 ## 📁 Project Structure
-ecotrack/
-│
-├── index.html              # Home / landing page
-├── calculator.html         # 8-category carbon calculator
-├── dashboard.html          # Analytics dashboard + PDF download
-├── activities.html         # 20-tile carbon activities explorer
-├── recommendation.html     # AI-powered recommendations page
-│
-├── utils.js                # Pure utility functions (testable, no DOM deps)
-├── store.js                # Central state manager (pub/sub, localStorage)
-├── carbon-data.js          # Emission factors, benchmarks, diet data
-├── calculator.js           # Calculator UI, tile system, footprint engine
-├── dashboard.js            # Chart rendering, KPI updates, PDF generation
-├── recommendation.js       # Rule engine + Claude API integration
-├── activities.js           # Activity modal system
-│
-├── home.css                # Home page styles
-├── cal.css                 # Calculator page styles
-├── dashboard.css           # Dashboard page styles
-├── activities.css          # Activities explorer styles
-├── recommendation.css      # Recommendations page styles
-│
-├── TESTING.md              # 35 manual test cases + console verification
-├── SECURITY.md             # Threat model, XSS prevention, CSP guidance
-└── README.md               # This file
 
----
+```text
+EcoTrack/
+│
+├── assets/
+│   ├── preview1.png          # Calculator page preview
+│   ├── preview2.png          # Dashboard preview
+│   └── preview3.png          # AI recommendations preview
+│
+├── css/
+│   ├── home.css
+│   ├── cal.css
+│   ├── dashboard.css
+│   ├── activities.css
+│   └── recommendation.css
+│
+├── js/
+│   ├── utils.js              # Shared utility functions
+│   ├── store.js              # Central state manager
+│   ├── carbon-data.js        # Emission factors and constants
+│   ├── calculator.js         # Carbon calculator logic
+│   ├── dashboard.js          # Dashboard and PDF generation
+│   ├── recommendation.js     # AI recommendation engine
+│   └── activities.js         # Activities explorer logic
+│
+├── index.html               # Home / Landing Page
+├── calculator.html          # Carbon Calculator
+├── dashboard.html           # Carbon Dashboard
+├── activities.html          # Activities Explorer
+├── recommendation.html      # AI Recommendations
+│
+├── LICENSE.md               # MIT License
+├── README.md                # Project documentation
+├── SECURITY.md              # Security practices & threat model
+└── TESTING.md               # Testing strategy and test cases
+```
+
 
 ## 🚀 Getting Started
 
@@ -356,10 +366,6 @@ d.time
 
 ---
 
-## AUTHOR
-
-Siddharth Verma
-
 ## 🤝 Contributing
 
 Contributions are welcome! Here's how to get started:
@@ -385,3 +391,9 @@ git push origin feature/your-feature-name
 - Maintain backwards compatibility with existing `localStorage` schema
 
 ---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+© 2026 Siddharth Verma
